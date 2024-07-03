@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specificity</title>
+    <link rel="stylesheet" href="specificity.css">
+    <style>
+ul#summer-drinks li.favorite{
+    color:aquamarine;
+    font-weight: bold;
+}
+ul#summer-drinks li{
+font-size:12px; 
+color:blueviolet;
+font-weight:normal ;
+}
+/*choose secound because of its more specificity*/
+  </style>
+</head>
+<body>
+   <ul id="summer-drinks">
+<li>cock</li>
+<li>pepsi</li>
+<li class="favorite"> dew</li>
+<li>thumbsup</li>
+</ul> 
+</body>
+</html>
