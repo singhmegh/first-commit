@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Contact form</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <div class ="container">
+    <form action =""method ="get">
+    <h1 class="main_heading">Contact form</h1>
+    <p>Send me your query</p>
+    <p>required field are followed by *</p>
+    <p>Name*<input type="text" name="name" placeholder="megha" required></p>
+    <fieldset>
+        <legend> Gender </legend>
+        <p>Male<input type="radio" name="gender" id="male"></p>
+        <p>Female<input type="radio" name="gender" id="female"></p>
+    </fieldset>
+    <p>Age*<input type="number" name="age" id="age"required></p>
+    <p>Location*:
+        <select name="location" id ="location"required>
+    <option value = "">--Select a location--</option>
+    <option value = "Asia">Asia</option>
+    <option value = "Europe">Europe</option>
+    <option value = "Austerlia">Austerlia</option>
+    <option value = "Antartica">Antartica</option>
+    <option value = "North America">north america</option>
+    <option value = "South america">south america</option>
+    <option value = "Africa">Africa</option>
+  </select>
+ </p>
+ <p>Country* <input type ="text" name="country" id="country" placeholder="country"></p>
+ <p>State* <input type="text" name="state" id="state" placeholder="state"></p>
+ <p>pin number*<input type="number" name="pin_number" placeholder="08767" required></p>
+ <p>Email* <input type="email" name="email" id ="email" placeholder="xyz@gmail.com" required></p>
+ <p>Mobile number* <input type="number" name="mobile number"id="mobile_number"required></p>
+ <p>Message <input type="text" name="text" id="message" cols="30" rows="15"></p>
+<p>contact us* :
+    <select name = "contact"id ="contact"required>
+        <option value="">--dial on it--</option>
+<option value = "123456789">123456789</option>
+<Option value="987654321">987654321</Option>
+</select>
+<input type ="submit" value="sunbmit">
+<input type ="reset" value="undo">
+</form>
+</div>
+</body>
+</html>
