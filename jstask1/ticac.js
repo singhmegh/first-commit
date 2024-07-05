@@ -31,13 +31,12 @@ boxes.forEach((box) => {
        if(turnO){
         box.innerText = "O"; //playerO
         turnO = false;
-        
-       }
+        box.style.color = "red";
+        }
        else{
         box.innerText = "X"; //playerX
         turnO = true;
-        document.querySelector(".box").computedStyleMap.color = blue;
-       
+        box.style.color = "blue";
        }
        box.disabled = true;
     
