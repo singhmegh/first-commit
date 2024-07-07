@@ -44,6 +44,7 @@ footer{
     background-color: rgb(58, 146, 146);
     overflow: hidden;
     position: fixed;
+    width: 100%;
 }
 footer a:hover{
     color: rgb(186, 125, 243);
@@ -54,4 +55,5 @@ footer a:hover{
         width: 10%;
         border-radius: 1px;
         padding: 1rem;
+        overflow: hidden;
     }
