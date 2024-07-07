@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding:0;
+    text-align: center;
+}
+h1{
+    background-color: #3385ff;
+    color: azure;
+    height: 5rem;
+line-height: 5rem;
+}
+.choice{
+    height: 165px;
+    width: 165px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#first:hover{
+    background-color: rgb(92, 92, 217);
+}
+#secound:hover{
+    background-color: rgb(92, 92, 217);
+}
+#third:hover{
+    background-color: rgb(92, 92, 217);
+}
+.box{
+    padding: 1rem;
+    font-size: 1.25rem;
+background-color: rgb(30, 178, 227);
+color: azure;
+border-radius: 2rem;
+border: none;
+}
+#firsrt{
+    height:60px;
+}
+#secound{
+    height:50px;
+}
+#third{
+    height:60px;
+}
+.choices{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem;
+    gap:3rem;
+}
+.scoreboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin-top: 3rem;
+    gap: 5rem;
+}
+#user, #comp{
+    font-size: 4rem;
+}
+.container{
+margin-top: 5rem;
+}
+#msg{
+    background-color: rgb(43, 229, 239);
+    color: azure;
+    font-size: 2rem;
+    margin-top: 5rem;
+    display: inline;
+    padding: 1rem;
+    border-radius: 1rem;
+}
