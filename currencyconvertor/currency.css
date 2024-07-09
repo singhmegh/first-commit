@@ -82,3 +82,22 @@ cursor: pointer;
 form button:hover{
     box-shadow:10px 5px 5px #0073e6;
 }
+@media screen and (max-width: 600px) {
+    body{
+    background-color:#8080ff;
+    height: 100%;
+
+    }
+    .container{
+        height: 40%;
+        width: 50%;
+    }
+.select-container{
+    width: 100%;
+    display: grid;
+}
+button{
+    background-color: antiquewhite;
+    width: 40%;
+}
+}
