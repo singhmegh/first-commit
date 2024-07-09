@@ -100,4 +100,8 @@ button{
     background-color: antiquewhite;
     width: 40%;
 }
+input{
+    width: 40%;
+    background-color:azure ;
+}
 }
