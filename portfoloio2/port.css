@@ -73,7 +73,7 @@ header  .toggle{
     cursor: pointer;
 
 }
-header .toggle .active{
+header .toggle.active{
     position: relative;
     background: url(close.png);
     background-repeat: no-repeat;
@@ -185,9 +185,9 @@ border-radius: 50%;
     filter: invert(0);
 }
 
-section .active .logo ,
-section .active  .content,
-section .active .sci{
+section.active .logo ,
+section.active .content,
+section.active .sci{
     transform: scale(0);
     
 }
@@ -197,15 +197,17 @@ section .active .sci{
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
+    display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     z-index: 2;
     padding-left: 100px;
     opacity: 0;
     visibility: hidden;
+    transition: 0.5s;
 }
-section.active.menu{
+section.active .menu{
     opacity: 1;
     visibility: visible;
     transition-delay: 0.5s;
@@ -227,4 +229,32 @@ section.active.menu{
     letter-spacing: 6px;
     background: #fff;
     color: #161a23;
+}
+@media (max-width: 991px){
+    section{
+        padding: 40px;
+    }
+header{
+    padding: 20px 40px;
+}
+section::before{
+    opacity: 0;
+}
+.girl{
+    right: -100px;
+    opacity: 0.3;
+}
+.content .content2 a{
+    margin-bottom: 10px;
+}
+.menu{
+    padding-left: 0;
+align-items: center;
+}
+.content .content2 h2 {
+    font-size: 2.2em;
+}
+.content .content2 h3 {
+    font-size: 1.5em;
+}
 }
