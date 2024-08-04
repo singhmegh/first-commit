@@ -59,14 +59,49 @@ const updateTodo = (e) => {
 };
 
 //Local storage
-const saveLocalTodos =(todo)=>{
-let todos =[];
-todos = JSON.parse(localStorage.getItem("todos"));
-//JSON.parse is a function that change JSON string into JSON object
-todos.push(todo);
-localStorage.setItem("todos" ,JSON.stringify(todos));
-//console.log(todos);
+const saveLocalTodos = (todo) => {
+  let todos;
+  if (localStorage.getItem("todos") === null) {
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem("todos"));
+  }
+  //JSON.parse is a function that change JSON string into JSON object
+  todos.push(todo);
+  localStorage.setItem("todos", JSON.stringify(todos));
+  //console.log(todos);
+};
+
+const getLocalTodos = () => {
+  let todos;
+  if (localStorage.getItem("todos") === null) {
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem("todos"));
+    todos.forEach((todo) => {
+      //creating p tag
+      const li = document.createElement("li");
+      const p = document.createElement("p");
+      p.innerHTML = todo;
+      li.appendChild(p);
+
+      //creating edit button
+      const editBtn = document.createElement("button");
+      editBtn.innerText = "Edit";
+      editBtn.classList.add("btn", "editBtn");
+      li.appendChild(editBtn);
+
+      //creating delete button
+      const deleteBtn = document.createElement("button");
+      deleteBtn.innerText = "Remove";
+      deleteBtn.classList.add("btn", "deleteBtn");
+      li.appendChild(deleteBtn);
+
+      todoList.appendChild(li);
+    });
+  }
 }
 
+document.addEventListener('DOMContentLoaded' , getLocalTodos);
 addBtn.addEventListener("click", addTodo);
 todoList.addEventListener("click", updateTodo);
