@@ -82,15 +82,21 @@ const menu = [
   },
 ];
 
+//get parent element
 const sectionCenter = document.querySelector(".section-center");
+const container = document.querySelector(".btn-container");
 
+//load page
 window.addEventListener("DOMContentLoaded", function () {
   displayMenuItems(menu);
   //console.log("Shake and bake");
+displayMenuButtons();
 });
 
+
+
 function displayMenuItems(menuItems) {
-  let displayMenu = menu.map(function (item) {
+  let displayMenu = menuItems.map(function (item) {
     //console.log(item);
 
     return `<article class="menu-item">
@@ -108,7 +114,45 @@ function displayMenuItems(menuItems) {
   });
 
   //join method and print whole array
-  displayMenu = displayMenu.join(""); //"" is used remove comma
+  displayMenu = displayMenu.join("");  //"" is used remove comma
   //console.log(displayMenu);
   sectionCenter.innerHTML = displayMenu;
+}
+function displayMenuButtons(){
+  const categories = menu.reduce(function(value, item){
+    //return item.category;
+    if(!value.includes(item.category)){
+      value.push(item.category);
+    }
+    return value;
+  },['all']);
+  const categoryBtns = categories.map(function(category){
+    return`<button type="button" class="filter-btn" data-id=${category}>
+            ${category}</button>`
+  })
+  .join("");
+  container.innerHTML = categoryBtns;
+  const filterBtns =document.querySelectorAll(".filter-btn");
+  //console.log(categoryBtns);
+  //console.log(categories);
+  
+  //filter items use forEach for iteration
+  filterBtns.forEach(function(btn){
+    btn.addEventListener("click" , function (e){
+      const category = e.currentTarget.dataset.id;
+      const menuCategory = menu.filter(function (menuItem){
+       // console.log(menuItem.category);
+       if(menuItem.category === category){
+        return menuItem;
+       }
+      });
+      //console.log(menuCategory)
+      if(category === 'all'){
+        displayMenuItems(menu);
+      }
+      else {
+        displayMenuItems(menuCategory);
+      }
+    });
+    });
 }
